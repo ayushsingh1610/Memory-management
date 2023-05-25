@@ -1,0 +1,1 @@
+Allocate the memory by the use of malloc function 
