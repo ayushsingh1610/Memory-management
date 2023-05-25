@@ -16,18 +16,23 @@ void main()
     else
     {
         printf("Memory allocated successfully\n");
-        for(int i=0;i<n;i++)
+        printf("\nBefore reallocation\n");
+        for (int i = 0; i < n; i++)
         {
-            printf("ptr[%d] = %d\n",i,i+1);
+            printf("%d, ",i+1);
         }
-        printf("Enter the NEW SIZE of array - ");
-        scanf("%d",&n);
         // Reallocate memory
+        printf("\nEnter the NEW SIZE of array - ");
+        scanf("%d",&n);
+        for (int i = 0; i < n; i++)
+        {
+            scanf("%d", (ptr + i));
+        }
         ptr = realloc(ptr, n*sizeof(int));
         printf("After reallocation\n");
         for(int i=0;i<n;i++)
         {
-            printf("ptr[%d] = %d\n",i,i+1);
+            printf("ptr[%d] = %d\n",i,ptr[i]);
         }
     }
 }
